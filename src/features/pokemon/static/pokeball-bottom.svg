@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Pokéball"
+   x="0px"
+   y="0px"
+   viewBox="0 0 273.27353 511.50002"
+   xml:space="preserve"
+   sodipodi:docname="pokeball-bottom.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   width="273.27353"
+   height="511.5"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs3762" /><sodipodi:namedview
+   id="namedview3760"
+   pagecolor="#505050"
+   bordercolor="#eeeeee"
+   borderopacity="1"
+   inkscape:pageshadow="0"
+   inkscape:pageopacity="0"
+   inkscape:pagecheckerboard="true"
+   showgrid="false"
+   showguides="true"
+   inkscape:guide-bbox="true"
+   inkscape:snap-smooth-nodes="false"
+   inkscape:snap-intersection-paths="false"
+   inkscape:zoom="1.0619805"
+   inkscape:cx="97.237012"
+   inkscape:cy="175.45575"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Pokéball_1_"
+   inkscape:showpageshadow="false"
+   inkscape:snap-page="true"
+   fit-margin-top="0"
+   fit-margin-left="0"
+   fit-margin-right="0"
+   fit-margin-bottom="0"
+   inkscape:rotation="-1"><sodipodi:guide
+     position="-35.213231,754.33966"
+     orientation="0,-1"
+     id="guide3859" /></sodipodi:namedview>
+<style
+   type="text/css"
+   id="style3749">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#DFDFDF;}
+	.st2{fill:#FF1C1C;}
+	.st3{fill:#DF1818;}
+</style>
+<g
+   id="Pokéball_1_"
+   transform="translate(-119.11323,-201.71322)">
+	<g
+   id="Colours"
+   transform="rotate(-90,297.39998,457.71322)">
+		<path
+   id="Down"
+   class="st0"
+   d="m 297.6,380.9 c -40.4,0 -74.1,-28.6 -82.1,-66.6 H 81.1 c 9.5,110.5 102.2,197.2 215.1,197.2 112.9,0 205.7,-86.7 215.1,-197.2 H 379.7 c -8,38.1 -41.7,66.6 -82.1,66.6 z" />
+		<path
+   id="Shadow_Down"
+   class="st1"
+   d="m 345.6,505.9 c 89.6,-21 157.7,-97.7 165.7,-191.6 h -53 c -5.3,85.2 -50,157.4 -112.7,191.6 z" />
+		
+		
+		
+	</g>
+	<path
+   id="Line"
+   d="m 119.38678,411.21321 c 5.4,-2 11.2,-3.10001 17.3,-3.10001 v 0 -0.1 0 c 6.1,0 11.9,1.1 17.3,3.1 18.8,7 32.1,25.10001 32.1,46.3 0,21.2 -13.4,39.30001 -32.1,46.30001 -5.4,2 -11.2,3.1 -17.3,3.1 v 0 0.1 0 c -6.1,0 -11.9,-1.09999 -17.3,-3.09999 l -0.27355,208.80531 c 5.80683,0.39431 11.66683,0.59469 17.57355,0.59469 141.2,0 255.69999,-114.5 255.69999,-255.7 0,-141.2 -114.4,-255.8 -255.7,-255.8 -5.63414,0 -11.22552,0.18203 -16.76858,0.54057 z m 231.9,47.69999 c 0,113.00001 -86.7,205.7 -197.2,215.1 v -134.4 c 38,-8 66.6,-41.7 66.6,-82.1 0,-40.4 -28.6,-74.1 -66.6,-82.1 V 243.71321 c 110.39999,9.5 197.2,102.19999 197.2,215.19999 z"
+   sodipodi:nodetypes="csccscscsccsccsssccsccsccs" />
+</g>
+</svg>
