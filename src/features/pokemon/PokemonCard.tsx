@@ -24,6 +24,50 @@ import waterImg from "./static/water.png";
 import startCapImg from "./static/pokeball-top.svg";
 import endCapImg from "./static/pokeball-bottom.svg";
 
+import bugTypeImg from "./static/bug.png";
+import darkTypeImg from "./static/dark.png";
+import dragonTypeImg from "./static/dragon.png";
+import electricTypeImg from "./static/electric.png";
+import fairyTypeImg from "./static/fairy.png";
+import fightingTypeImg from "./static/fighting.png";
+import fireTypeImg from "./static/fire.png";
+import flyingTypeImg from "./static/flying.png";
+import ghostTypeImg from "./static/ghost.png";
+import grassTypeImg from "./static/grass.png";
+import groundTypeImg from "./static/ground.png";
+import iceTypeImg from "./static/ice.png";
+import normalTypeImg from "./static/normal.png";
+import poisonTypeImg from "./static/poison.png";
+import psychicTypeImg from "./static/psychic.png";
+import rockTypeImg from "./static/rock.png";
+import shadowTypeImg from "./static/shadow.png";
+import steelTypeImg from "./static/steel.png";
+import unknownTypeImg from "./static/unknown.png";
+import waterTypeImg from "./static/water.png";
+
+const typeImgMap = {
+  bug: bugTypeImg,
+  dark: darkTypeImg,
+  dragon: dragonTypeImg,
+  electric: electricTypeImg,
+  fairy: fairyTypeImg,
+  fighting: fightingTypeImg,
+  fire: fireTypeImg,
+  flying: flyingTypeImg,
+  ghost: ghostTypeImg,
+  grass: grassTypeImg,
+  ground: groundTypeImg,
+  ice: iceTypeImg,
+  normal: normalTypeImg,
+  poison: poisonTypeImg,
+  psychic: psychicTypeImg,
+  rock: rockTypeImg,
+  shadow: shadowTypeImg,
+  steel: steelTypeImg,
+  unknown: unknownTypeImg,
+  water: waterTypeImg,
+};
+
 function titleCase(input: string) {
   return input
     .split(" ")
@@ -31,12 +75,12 @@ function titleCase(input: string) {
     .join(" ");
 }
 
-function hectogramsToPounds(hectograms: number) {
-  return (hectograms / 4.5359237).toFixed(1);
+function hectogramsToPounds(hectograms: number): number {
+  return hectograms / 4.536;
 }
 
-function decimetersToInches(decimeters: number) {
-  return (decimeters * 3.937).toFixed(1);
+function decimetersToInches(decimeters: number): number {
+  return decimeters * 3.937;
 }
 
 function PokemonStats({ name }: { name: string }) {
@@ -47,18 +91,27 @@ function PokemonStats({ name }: { name: string }) {
 
   const { types, height, weight } = data.pokemon;
 
-  console.log(types);
+  const heightInches = decimetersToInches(height);
+  const weightPounds = hectogramsToPounds(weight);
 
   return (
-    <div>
-      <p>
-        {"Types: " +
-          types
-            .map(({ type }: { type: any }) => titleCase(type.name))
-            .join(", ")}
-      </p>
-      <p>Height: {decimetersToInches(height)} in</p>
-      <p>Weight: {hectogramsToPounds(weight)} lbs</p>
+    <div className="stats">
+      <div className="types">
+        {types.map(({ type }: { type: any }, idx: number) => {
+          if (type.name in typeImgMap) {
+            return (
+              <img
+                key={idx}
+                src={(typeImgMap as any)[type.name]}
+                alt={type.name}
+              />
+            );
+          }
+          return <img key={idx} src={unknownTypeImg} alt={type.name} />;
+        })}
+      </div>
+      <p>Height: {(heightInches / 12).toFixed(0)}'{(heightInches % 12).toFixed(0)}"</p>
+      <p>Weight: {weightPounds.toFixed(1)} lbs</p>
     </div>
   );
 }
