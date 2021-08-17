@@ -1,22 +1,14 @@
 import React from "react";
 
-import { useQuery } from "@apollo/client";
-import { QUERY_ONE } from "./PokemonAPI";
+import { useAppSelector, useAppDispatch } from "@features/../hooks";
+import { setFavorites, addFavorite, removeFavorite } from "./PokemonSlice";
 
-import {
-  Grid,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-  CardActions,
-  IconButton,
-  makeStyles,
-  createStyles,
-  Theme,
-  CircularProgress,
-} from "@material-ui/core";
-import FavoriteIcon from "@material-ui/icons/Favorite";
+import { useQuery } from "@apollo/client";
+import { pokeClient, QUERY_ONE } from "./PokemonAPI";
+
+import { IconButton, Grid, CircularProgress } from "@material-ui/core";
+
+import { Favorite, Satellite } from "@material-ui/icons";
 
 import "./Pokemon.scss";
 
@@ -110,7 +102,10 @@ function PokemonStats({ name }: { name: string }) {
           return <img key={idx} src={unknownTypeImg} alt={type.name} />;
         })}
       </div>
-      <p>Height: {(heightInches / 12).toFixed(0)}'{(heightInches % 12).toFixed(0)}"</p>
+      <p>
+        Height: {(heightInches / 12).toFixed(0)}'
+        {(heightInches % 12).toFixed(0)}"
+      </p>
       <p>Weight: {weightPounds.toFixed(1)} lbs</p>
     </div>
   );
@@ -118,6 +113,10 @@ function PokemonStats({ name }: { name: string }) {
 
 function PokemonCard(props: any) {
   const pokemon = props.pokemon;
+
+  const state = useAppSelector((state) => state.pokemon);
+  const dispatch = useAppDispatch();
+
   return (
     <Grid item xs={12} sm={6} md={4}>
       <div className="pokemon-card">
@@ -130,7 +129,18 @@ function PokemonCard(props: any) {
           <img className="end-cap" src={endCapImg} />
         </div>
         <img className="sprite" src={pokemon.image} alt={pokemon.name} />
-        <PokemonStats name={pokemon.name} />
+        {/* <PokemonStats name={pokemon.name} /> */}
+        <IconButton
+          onClick={() =>
+            pokemon.id in state.favorites
+              ? dispatch(removeFavorite({ id: pokemon.id, name: pokemon.name }))
+              : dispatch(addFavorite({ id: pokemon.id, name: pokemon.name }))
+          }
+        >
+          <Favorite
+            color={pokemon.id in state.favorites ? "secondary" : "inherit"}
+          />
+        </IconButton>
       </div>
     </Grid>
   );
