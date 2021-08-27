@@ -129,7 +129,7 @@ function PokemonCard(props: any) {
           <img className="end-cap" src={endCapImg} />
         </div>
         <img className="sprite" src={pokemon.image} alt={pokemon.name} />
-        {/* <PokemonStats name={pokemon.name} /> */}
+        <PokemonStats name={pokemon.name} />
         <IconButton
           onClick={() =>
             pokemon.id in state.favorites
